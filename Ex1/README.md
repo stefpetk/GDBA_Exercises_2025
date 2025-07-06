@@ -1,0 +1,14 @@
+# Exercise 1 - Large-scale land cover mapping with satellite imagery and convolutional neural networks
+
+1) The *Instr_TechDesc* directory contains the exercise instructions as well as the technical description in Greek.
+2) The *Scripts* directory containing the relevant scripts for the project, their structure is listed below:
+ * [A_Read_Preprocess_S2_Ims.py](Ex1/Scripts/A_Read_Preprocess_S2_Ims.py) # Read the Sentinel-2 images with the rasterio module and implement some preprocessing steps (resampling, reprojection etc.)
+ * [B_Create_Dataset.py](Ex1/Scripts/B_Create_Dataset.py) # Create a dataset containing patches of the augmented Sentinel-2 images and the ground truth segmentation maps
+ * [C_Unet_Arch](Ex1/Scripts/C_Unet_Arch.py) # Class containing the convolutional (downscaling) blocks of the encoder part of the U-net architecture which will be implemented for the task of semantic segmentation and the up-convolutional (upscaling) of the decoder part. All the "parallel" blocks of the encoder and decoder parts are "linked" via skip connections.
+ * [APP1_Preprocessing_Training.py](Ex1/Scripts/APP1_Preprocessing_Training.py) # Script for training the U-net model
+ * [D_Predict_Merge.py](Ex1/Scripts/D_Predict_Merge.py) # Class containing all the necessary methods for predicting new ground truth maps from the model trained
+ * [APP2_Preprocessing_Prediction.py](Ex1/Scripts/APP2_Preprocessing_Prediction.py) # Script for predicting new ground truth maps from Sentinel-2 images.
+ * [Ex1/Scripts/EXTR_Helper_Funcs.py](Ex1/Scripts/EXTR_Helper_Funcs.py) # Helper functions for the implementation
+
+Below is an excerpt of the predicted ground truth map.
+
